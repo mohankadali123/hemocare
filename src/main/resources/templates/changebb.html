@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<form action="changebbform">
+<input type="text" name="hid">
+<input type="text" name="apos">
+<input type="text" name="bpos">
+<input type="text" name="abpos">
+<input type="text" name="opos">
+<input type="text" name="aneg">
+<input type="text" name="bneg">
+<input type="text" name="abneg">
+<input type="text" name="oneg">
+    <p>Age: <span th:text="${commonVariable}"></span></p>
+<input type="text" th:placeholder="${commonVariable}" />
+
+
+<input type="submit">
+</form>
+</body>
+</html>

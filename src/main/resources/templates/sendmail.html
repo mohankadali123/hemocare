@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Your Hemocare Email</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            background-color: #FF4B2B;
+            color: #fff;
+            padding: 20px;
+        }
+        .content {
+            padding: 20px;
+        }
+        .button {
+            display: inline-block;
+            background-color: #FF4B2B;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #FF4B2B;
+        }
+        h1
+        {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1> Hemocare</h1>
+    </div>
+    <div class="content">
+        <h3>Dear <span th:text="${name}"></span>,</h3>
+        <p>One of our Hemocare users with name <strong> <span th:text="${name2}"></span></strong> and email <strong><span th:text="${email}"></span></strong> needs  <strong><span th:text="${bloodGroup}"></span></strong> blood.</p>
+        <p>The user is located at postal code <span th:text="${postalCode}"></span>.</p>
+        <p>If you are near their location, please consider accepting their request. You can contact them at: <strong> <span th:text="${phoneNumber}"></span></strong></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Your Page</title>
+    
+        <style>
+        body
+        {
+            background:white;
+        }
+        #subdiv{
+            display: flex;
+            justify-content:space-around;
+            margin-top: 50px;
+            
+        }
+        .groupdiv{
+            width: 280px;
+            height: 280px;
+            margin: 10px;
+            border-radius: 15px;
+            box-shadow: 5px 5px 10px black;
+            background-color: white;
+            color: red;
+        }
+        .groupdiv h1{
+            text-align: center;
+            color: rgb(255, 255, 255);
+            background-color: red;
+            margin-top: 0;
+            height: 70px;
+            padding-top: 30px;
+            border-radius: 15px;
+        }
+        .groupdiv h2
+        {
+            color: white;
+            background-color: red;            
+            margin-left: 40px;
+            text-align: center;
+            margin-right: 50px;
+            margin-top: -60px;
+            border-radius: 10px;
+        }
+        #avail
+        {
+            font-size: 80px;
+            text-align: center;
+            margin-top: -5px;
+            color: black;
+            font-weight: 600;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+    </style>
+    
+</head>
+<body>
+<div id="main">
+        <div id="subdiv">
+    <div class="groupdiv">
+        <h1>group: A+</h1>
+         <p id="avail" > <span th:text="${yourObject.apos}"></span></p>
+        <h2>Available</h2>
+        
+    </div>
+    <div class="groupdiv">
+        <h1 >group: A-</h1>
+        <p id="avail" > <span th:text="${yourObject.aneg}"></span></p>
+        <h2>Available</h2>
+    </div>
+    <div class="groupdiv">
+        <h1>group: B+</h1>
+        <p id="avail" > <span th:text="${yourObject.bpos}"></span></p>
+        <h2>Available</h2>
+    </div>
+</div>
+
+<div id="subdiv">
+    <div class="groupdiv">
+        <h1>group: B-</h1>
+        <p id="avail" > <span th:text="${yourObject.bneg}"></span></p>
+        <h2>Available</h2>
+    </div>
+    <div class="groupdiv">
+        <h1 >group: AB+</h1>
+        <p id="avail" > <span th:text="${yourObject.abpos}"></span></p>
+        <h2>Available</h2>
+    </div>
+    <div class="groupdiv">
+        <h1>group: AB-</h1>
+        <p id="avail" > <span th:text="${yourObject.abneg}"></span></p>
+        <h2>Available</h2>
+    </div>
+</div>
+
+<div id="subdiv">
+    <div class="groupdiv">
+        <h1>group: O+</h1>
+        <p id="avail" > <span th:text="${yourObject.opos}"></span></p>
+        <h2>Available</h2>
+    </div>
+    <div class="groupdiv">
+        <h1 >group: O-</h1>
+        <p id="avail" > <span th:text="${yourObject.oneg}"></span></p>
+        <h2>Available</h2>
+    </div>
+</div>
+
+    
+</div>
+    
+</body>
+</html>

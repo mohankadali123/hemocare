@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Select Options</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        .center-form {
+            margin: 0 auto;
+            max-width: 50%;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="center-form mt-5">
+            <h2>Select Options</h2>
+            <form th:action="@{/changeblood}" method="post">
+                <!-- Select for Increase/Decrease -->
+                <div class="form-group">
+                    <label for="optionSelect">Select an Option:</label>
+                    <select class="form-control" id="optionSelect" name="option">
+                        <option value="increase">Increase</option>
+                        <option value="decrease">Decrease</option>
+                    </select>
+                </div>
+
+                <!-- Select for Blood Groups -->
+                <div class="form-group">
+                    <label for="bloodGroupSelect">Select a Blood Group:</label>
+                    <select class="form-control" id="bloodGroupSelect" name="bloodGroup">
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                    </select>
+                </div>
+
+                <!-- Input for Integer -->
+                <div class="form-group">
+                    <label for="integerInput">Enter an Integer:</label>
+                    <input type="number" class="form-control" id="integerInput" name="integer">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+   

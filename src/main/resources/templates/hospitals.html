@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<style>
+*
+{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background: linear-gradient(to left,rgb(39, 5, 164),rgb(0, 110, 255));
+
+}
+        #maindiv{
+            width: 64%;
+            border-radius: 20px;
+            box-shadow: 2px 2px 10px black;
+            margin-left: 21%;
+            margin-top: 35px;
+            display: flex;
+            justify-content:space-evenly;
+            background-color: white;
+        }
+        #maindiv img{
+            width: 30%;
+            border-radius: 20px;
+        }
+        #subdiv{
+            width: 70%;
+           text-align: center;
+        }
+#subdiv{
+    margin-top: 45px;
+}
+#navdiv
+{
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(to left,rgb(6, 21, 228),rgb(5, 5, 240));
+    width: 100%;
+    height: auto;
+    padding-right: 40px;
+    padding-bottom: 15px;
+}
+#navbar a
+{
+    margin-top: 8px;
+    float: left;
+    margin-left: 25px;
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+    border-radius: 20px;
+    padding: 10px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+}
+#navbar
+{
+    margin-right: 200px;
+}
+#mainlogo
+{
+    margin-left: 30px;
+    color:rgb(253, 254, 253);
+    font-size: 50px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#navbar a:hover 
+{
+    color: rgb(227, 243, 7);
+}
+#a5
+{
+    background-color: red;
+    text-align: center;
+    width: 200px;
+}
+a {
+  text-decoration: none; 
+  
+}
+
+    </style>
+
+</head>
+<body>
+    <div id="navdiv">
+
+        <h1 id="mainlogo">Hemo care</h1>
+        <nav id="navbar">
+
+            <a href="" id="a1">Hospitals</a>
+            <a href="" id="a2">Request</a>
+            <a href="" id="a3">About us</a>
+            <a href="" id="a4">Contact us</a>
+            <a href="" id="a5">login with us</a>
+
+        </nav>
+    </div>
+    
+    <div th:each="object : ${objectList}" class="object-container">
+        <a th:href="@{'/showdata?hid=' + ${object.hid}}">
+            <div id="maindiv">
+                <!--  <img th:src="@{/hospital.jpg}" alt="logo" id="img" width="100" height="100">-->
+                <img alt="none" src="https://img.freepik.com/free-vector/city-hospital-building_74855-6301.jpg?w=1060&t=st=1692032393~exp=1692032993~hmac=4016c8f7515ca00ae2555f18d70d68a9221a427c9581ea325f1dbff825db0d12">
+                <div id="subdiv">
+                <h1 class="name" th:text="${object.hospitalName}"></h1>
+                <h3 class="description" th:text="${object.hospitalAddress}"></h3>
+                <h3 class="value" th:text="${object.pincode}"></h3>
+                </div>
+            </div>
+        </a>
+    </div>
+
+     
+</body>
+</html>
